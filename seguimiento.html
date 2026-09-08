@@ -1,0 +1,142 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Seguimiento Diario Ventas 30X</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{--bg:#FAFAF5;--panel:#FFFFFF;--panel2:#F4F5EE;--line:#E6E7DE;--line2:#D8DACE;--ink:#171911;--mut:#6C6C5F;--faint:#9A9A8C;--lima:#6f8000;--lima-bg:#EAF29B;--good:#2E7D46;--good-bg:#D8EFD9;--warn:#9A6A0E;--warn-bg:#F6E6B6;--bad:#C0453B;--bad-bg:#F4D9D5;--blue:#3760C8;--blue-bg:#DEE6FA;--shadow:0 1px 2px rgba(20,22,12,.05),0 10px 30px rgba(20,22,12,.06)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B0C08;--panel:#14160F;--panel2:#1A1C14;--line:#262920;--line2:#333629;--ink:#F2EFE4;--mut:#9C9B8C;--faint:#6E6E60;--lima:#CDE43A;--lima-bg:#2b3308;--good:#86E08A;--good-bg:#16301b;--warn:#E7C24B;--warn-bg:#332a0d;--bad:#E8756B;--bad-bg:#331815;--blue:#86ADF5;--blue-bg:#141f38;--shadow:0 1px 2px rgba(0,0,0,.4),0 12px 34px rgba(0,0,0,.34)}}
+:root[data-theme="dark"]{--bg:#0B0C08;--panel:#14160F;--panel2:#1A1C14;--line:#262920;--line2:#333629;--ink:#F2EFE4;--mut:#9C9B8C;--faint:#6E6E60;--lima:#CDE43A;--lima-bg:#2b3308;--good:#86E08A;--good-bg:#16301b;--warn:#E7C24B;--warn-bg:#332a0d;--bad:#E8756B;--bad-bg:#331815;--blue:#86ADF5;--blue-bg:#141f38;--shadow:0 1px 2px rgba(0,0,0,.4),0 12px 34px rgba(0,0,0,.34)}
+*{box-sizing:border-box}html,body{margin:0}body{background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,sans-serif;line-height:1.45}
+.mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.wrap{max-width:1200px;margin:0 auto;padding:22px 20px 80px}
+.eb{font-size:10.5px;font-weight:800;letter-spacing:.19em;text-transform:uppercase;color:var(--lima)}
+h1{font-family:Archivo,sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;margin:4px 0 2px}
+.sub{font-size:13px;color:var(--mut);margin-bottom:18px}
+.kpis{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:12px 16px;box-shadow:var(--shadow);min-width:120px}
+.kpi .n{font-family:Archivo;font-weight:800;font-size:24px}.kpi .l{font-size:11px;color:var(--mut);margin-top:3px;text-transform:uppercase;letter-spacing:.03em;font-weight:600}
+.kpi.hot .n{color:var(--lima)}.kpi.warn .n{color:var(--warn)}
+.metabar{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;box-shadow:var(--shadow);margin:10px 0 22px;font-size:13px;color:var(--mut);flex-wrap:wrap}
+.metabar b{color:var(--ink)}.metabar input{width:60px;font:inherit;font-weight:700;color:var(--ink);background:var(--panel2);border:1px solid var(--line2);border-radius:8px;padding:4px 8px;text-align:center}
+h2{font-family:Archivo,sans-serif;font-size:15px;font-weight:800;margin:26px 0 10px;display:flex;align-items:center;gap:8px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:760px){.cards{grid-template-columns:repeat(2,1fr)}}
+.cc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 15px;box-shadow:var(--shadow)}
+.cc .cn{font-family:Archivo;font-weight:800;font-size:16px;margin-bottom:8px}
+.cc .big{font-family:Archivo;font-weight:800;font-size:30px;line-height:1}
+.cc .row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mut);padding:3px 0;border-top:1px solid var(--line);margin-top:6px}
+.cc .row:first-of-type{border-top:none;margin-top:8px}
+.cc .row b{color:var(--ink)}
+.bar{height:6px;background:var(--panel2);border-radius:99px;overflow:hidden;margin-top:8px;border:1px solid var(--line)}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--lima),var(--good))}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--panel)}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+th{background:var(--panel2);text-align:right;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--mut);font-weight:700;padding:9px 10px;border-bottom:1px solid var(--line2);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
+tr.wk td{background:color-mix(in srgb,var(--panel2) 40%,transparent)}
+tr.today td{background:var(--lima-bg)}
+tr.tot td{border-top:2px solid var(--line2);font-weight:800;background:var(--panel2)}
+input.cell{width:46px;font:inherit;font-family:"IBM Plex Mono";text-align:right;color:var(--ink);background:transparent;border:1px solid transparent;border-radius:6px;padding:3px 5px}
+input.cell:hover{border-color:var(--line2)}input.cell:focus{border-color:var(--lima);background:var(--panel2);outline:none}
+td.meta{color:var(--faint)}td.ok{color:var(--good);font-weight:700}td.miss{color:var(--bad);font-weight:700}
+.day{color:var(--mut);font-size:12px}
+.prog{display:inline-flex;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px;margin-left:4px}
+.pg.ai{color:var(--good);background:var(--good-bg)}.pg.sm{color:var(--lima);background:var(--lima-bg)}.pg.li{color:var(--blue);background:var(--blue-bg)}
+.rate{font-weight:700}.rate.g{color:var(--good)}.rate.w{color:var(--warn)}.rate.b{color:var(--bad)}
+.note{font-size:11.5px;color:var(--faint);margin-top:8px;line-height:1.5}
+.tabs{display:inline-flex;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:3px;gap:2px;margin-left:auto}
+.tabs button{font:inherit;font-size:12px;font-weight:700;color:var(--mut);background:none;border:0;border-radius:7px;padding:6px 12px;cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--panel);color:var(--ink);box-shadow:var(--shadow)}
+.reset{font:inherit;font-size:11px;font-weight:700;color:var(--bad);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer;margin-left:8px}
+footer{margin-top:28px;font-size:11px;color:var(--faint);border-top:1px solid var(--line);padding-top:14px;line-height:1.6}
+</style></head><body><div class="wrap">
+<div class="eb">30X · Vertical de Ventas · Seguimiento diario</div>
+<h1>Ventas por closer — Septiembre 2026</h1>
+<div class="sub">AI Sales · Sales Machine · LinkedIn Sales · 4 closers · datos de HubSpot (venta = todo ganado: completos + parciales) · las celdas son editables y se guardan en tu navegador.</div>
+<div class="kpis" id="kpis"></div>
+<div class="metabar">Meta del mes (equipo): <input id="meta" type="number" value="50"> cupos · Días hábiles (L–S, sin festivos): <b>26</b> · Transcurridos: <b id="elap">0</b> · Restantes: <b id="rem">0</b> · Meta diaria equipo: <b id="mday">0</b> · Ritmo requerido restante: <b id="pace">0</b>/día · <span class="note" style="margin:0">50 total ÷ 4 = 12,5 por closer</span> <button class="reset" id="reset">Reiniciar edición</button></div>
+
+<h2>📅 Registro diario de ventas <span class="note" style="font-weight:400">(editable — escribe las ventas de cada día)</span></h2>
+<div class="tablewrap"><table id="daily"><thead><tr><th>Día</th><th>Juan Pablo</th><th>María</th><th>Ricardo</th><th>Luigi</th><th>Total día</th><th>Acumulado</th><th>Meta acum.</th><th>vs meta</th></tr></thead><tbody id="dbody"></tbody></table></div>
+
+<h2>🎯 Resumen por closer</h2>
+<div class="cards" id="cards"></div>
+
+<h2>🧩 Ventas de septiembre por programa</h2>
+<div class="tablewrap"><table><thead><tr><th>Closer</th><th>AI Sales</th><th>Sales Machine</th><th>LinkedIn</th><th>Total</th></tr></thead><tbody id="progbody"></tbody></table></div>
+
+<h2>🔻 Tasas de conversión del embudo <div class="tabs" id="funtabs"><button data-f="ago" aria-pressed="true">Agosto</button><button data-f="sep">Septiembre (corrido)</button></div></h2>
+<div class="tablewrap"><table><thead><tr><th>Closer</th><th>Registrado</th><th>Calificado</th><th>Agendado</th><th>Atendido</th><th>Ganado</th><th>Calif→Reg</th><th>Agend→Calif</th><th>Show-up (Aten→Agend)</th><th>Cierre (Gana→Aten)</th><th>Global</th></tr></thead><tbody id="funbody"></tbody></table></div>
+<div class="note"><b>Flujo del mes:</b> registrados = deals creados en el mes; calificados / agendados / atendidos = deals que <b>entraron a esa etapa</b> durante el mes; <b>ganados = cerrados-ganados con fecha de cierre en el mes</b> (completos + parciales). Las tasas son de flujo (no cohorte estricta). Septiembre está en curso → sus etapas finales aún suben. Agosto es el mes cerrado de referencia.</div>
+
+<footer>Fuente: HubSpot (CRM), corte 8-sep-2026. Venta = deal ganado (completo o parcial). Metas: 50 cupos del equipo repartidos entre 4 closers sobre 26 días hábiles (L–S, sin festivos de septiembre). Edición local por navegador; para tracking compartido en vivo, se puede conectar a una base común.</footer>
+</div>
+<script>
+const D={"closers":["Juan Pablo","María","Ricardo","Luigi"],"days":["2026-09-01","2026-09-02","2026-09-03","2026-09-04","2026-09-05","2026-09-07","2026-09-08","2026-09-09","2026-09-10","2026-09-11","2026-09-12","2026-09-14","2026-09-15","2026-09-16","2026-09-17","2026-09-18","2026-09-19","2026-09-21","2026-09-22","2026-09-23","2026-09-24","2026-09-25","2026-09-26","2026-09-28","2026-09-29","2026-09-30"],"seed":{"Juan Pablo":{"2026-09-01":4,"2026-09-02":2,"2026-09-03":0,"2026-09-04":0,"2026-09-05":1,"2026-09-07":1,"2026-09-08":0,"2026-09-09":0,"2026-09-10":0,"2026-09-11":0,"2026-09-12":0,"2026-09-14":0,"2026-09-15":0,"2026-09-16":0,"2026-09-17":0,"2026-09-18":0,"2026-09-19":0,"2026-09-21":0,"2026-09-22":0,"2026-09-23":0,"2026-09-24":0,"2026-09-25":0,"2026-09-26":0,"2026-09-28":0,"2026-09-29":0,"2026-09-30":0},"María":{"2026-09-01":0,"2026-09-02":1,"2026-09-03":1,"2026-09-04":1,"2026-09-05":1,"2026-09-07":0,"2026-09-08":0,"2026-09-09":0,"2026-09-10":0,"2026-09-11":0,"2026-09-12":0,"2026-09-14":0,"2026-09-15":0,"2026-09-16":0,"2026-09-17":0,"2026-09-18":0,"2026-09-19":0,"2026-09-21":0,"2026-09-22":0,"2026-09-23":0,"2026-09-24":0,"2026-09-25":0,"2026-09-26":0,"2026-09-28":0,"2026-09-29":0,"2026-09-30":0},"Ricardo":{"2026-09-01":0,"2026-09-02":4,"2026-09-03":0,"2026-09-04":0,"2026-09-05":0,"2026-09-07":0,"2026-09-08":0,"2026-09-09":0,"2026-09-10":0,"2026-09-11":0,"2026-09-12":0,"2026-09-14":0,"2026-09-15":0,"2026-09-16":0,"2026-09-17":0,"2026-09-18":0,"2026-09-19":0,"2026-09-21":0,"2026-09-22":0,"2026-09-23":0,"2026-09-24":0,"2026-09-25":0,"2026-09-26":0,"2026-09-28":0,"2026-09-29":0,"2026-09-30":0},"Luigi":{"2026-09-01":3,"2026-09-02":1,"2026-09-03":1,"2026-09-04":1,"2026-09-05":1,"2026-09-07":3,"2026-09-08":0,"2026-09-09":0,"2026-09-10":0,"2026-09-11":0,"2026-09-12":0,"2026-09-14":0,"2026-09-15":0,"2026-09-16":0,"2026-09-17":0,"2026-09-18":0,"2026-09-19":0,"2026-09-21":0,"2026-09-22":0,"2026-09-23":0,"2026-09-24":0,"2026-09-25":0,"2026-09-26":0,"2026-09-28":0,"2026-09-29":0,"2026-09-30":0}},"meta":50,"wd":26,"today":"2026-09-08","progsep":{"Juan Pablo":{"AI Sales":3,"Sales Machine":2,"LinkedIn":3},"María":{"AI Sales":1,"Sales Machine":2,"LinkedIn":1},"Ricardo":{"AI Sales":2,"Sales Machine":1,"LinkedIn":1},"Luigi":{"AI Sales":2,"Sales Machine":5,"LinkedIn":5},"Otros":{"AI Sales":0,"Sales Machine":0,"LinkedIn":1}}};const FUN={"ago": [{"name": "Juan Pablo", "reg": 433, "cal": 162, "age": 107, "ate": 55, "gan": 7, "r_cal": 37.41339491916859, "r_age": 66.04938271604938, "r_ate": 51.401869158878505, "r_gan": 12.727272727272727, "r_glob": 1.6166281755196306}, {"name": "María", "reg": 445, "cal": 173, "age": 98, "ate": 39, "gan": 28, "r_cal": 38.87640449438202, "r_age": 56.64739884393064, "r_ate": 39.795918367346935, "r_gan": 71.7948717948718, "r_glob": 6.292134831460674}, {"name": "Ricardo", "reg": 457, "cal": 187, "age": 123, "ate": 75, "gan": 14, "r_cal": 40.91903719912472, "r_age": 65.77540106951872, "r_ate": 60.97560975609756, "r_gan": 18.666666666666668, "r_glob": 3.063457330415755}, {"name": "Luigi", "reg": 491, "cal": 177, "age": 154, "ate": 84, "gan": 27, "r_cal": 36.04887983706721, "r_age": 87.00564971751412, "r_ate": 54.54545454545455, "r_gan": 32.142857142857146, "r_glob": 5.4989816700611}, {"name": "TOTAL", "reg": 1982, "cal": 748, "age": 516, "ate": 258, "gan": 183, "r_cal": 37.73965691220989, "r_age": 68.98395721925134, "r_ate": 50.0, "r_gan": 70.93023255813954, "r_glob": 9.233097880928355}], "sep": [{"name": "Juan Pablo", "reg": 206, "cal": 52, "age": 50, "ate": 20, "gan": 8, "r_cal": 25.24271844660194, "r_age": 96.15384615384616, "r_ate": 40.0, "r_gan": 40.0, "r_glob": 3.883495145631068}, {"name": "María", "reg": 216, "cal": 60, "age": 50, "ate": 10, "gan": 4, "r_cal": 27.77777777777778, "r_age": 83.33333333333333, "r_ate": 20.0, "r_gan": 40.0, "r_glob": 1.8518518518518519}, {"name": "Ricardo", "reg": 246, "cal": 58, "age": 63, "ate": 29, "gan": 4, "r_cal": 23.577235772357724, "r_age": 108.62068965517241, "r_ate": 46.03174603174603, "r_gan": 13.793103448275861, "r_glob": 1.6260162601626016}, {"name": "Luigi", "reg": 218, "cal": 53, "age": 61, "ate": 26, "gan": 12, "r_cal": 24.31192660550459, "r_age": 115.09433962264151, "r_ate": 42.622950819672134, "r_gan": 46.15384615384615, "r_glob": 5.504587155963303}, {"name": "TOTAL", "reg": 903, "cal": 242, "age": 228, "ate": 88, "gan": 29, "r_cal": 26.79955703211517, "r_age": 94.21487603305785, "r_ate": 38.59649122807018, "r_gan": 32.95454545454545, "r_glob": 3.211517165005537}]};
+const $=s=>document.querySelector(s);
+const KEY='seg30x_sep';
+let EDIT={};try{EDIT=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){EDIT={}}
+const CL=D.closers, DAYS=D.days;
+function val(dd,c){const k=dd+'|'+c;if(k in EDIT)return EDIT[k];return (D.seed[c]&&D.seed[c][dd])||0}
+const MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+function fdate(iso){const [y,m,dd]=iso.split('-').map(Number);const dt=new Date(y,m-1,dd);const wd=['dom','lun','mar','mié','jue','vie','sáb'][dt.getDay()];return wd+' '+dd+'-'+MES[m-1]}
+function meta(){return Math.max(1,parseFloat($('#meta').value)||50)}
+function render(){
+ const M=meta();const perTeamDay=M/D.wd;
+ const tb=$('#dbody');tb.innerHTML='';
+ let acum=0, totC={}; CL.forEach(c=>totC[c]=0);
+ let elapsed=0;
+ DAYS.forEach((dd,i)=>{
+  const isToday=dd===D.today, past=dd<=D.today;
+  if(past)elapsed++;
+  let trday=0;const tds=CL.map(c=>{const v=val(dd,c);totC[c]+=v;trday+=v;return `<td><input class="cell" data-d="${dd}" data-c="${c}" value="${v}"></td>`}).join('');
+  acum+=trday;const metaAcum=perTeamDay*(i+1);
+  const diff=acum-metaAcum;const cls=diff>=0?'ok':'miss';
+  const tr=document.createElement('tr');tr.className=(isToday?'today':'');
+  tr.innerHTML=`<td class="day">${fdate(dd)}</td>${tds}<td class="mono"><b>${trday}</b></td><td class="mono">${acum}</td><td class="meta mono">${metaAcum.toFixed(1)}</td><td class="${cls} mono">${diff>=0?'+':''}${diff.toFixed(1)}</td>`;
+  tb.appendChild(tr);
+ });
+ // fila total
+ const totAll=CL.reduce((a,c)=>a+totC[c],0);
+ const tr=document.createElement('tr');tr.className='tot';
+ tr.innerHTML=`<td>TOTAL mes</td>${CL.map(c=>`<td class="mono">${totC[c]}</td>`).join('')}<td class="mono">${totAll}</td><td class="mono">${totAll}</td><td class="meta mono">${M}</td><td class="${totAll>=M?'ok':'miss'} mono">${totAll>=M?'+':''}${(totAll-M).toFixed(0)}</td>`;
+ tb.appendChild(tr);
+ // kpis
+ const rem=D.wd-elapsed;const falt=Math.max(0,M-totAll);
+ $('#kpis').innerHTML=`
+  <div class="kpi hot"><div class="n">${totAll}/${M}</div><div class="l">Vendido / meta</div></div>
+  <div class="kpi"><div class="n">${falt}</div><div class="l">Faltan</div></div>
+  <div class="kpi"><div class="n mono">${elapsed}/${D.wd}</div><div class="l">Días hábiles</div></div>
+  <div class="kpi warn"><div class="n mono">${rem>0?(falt/rem).toFixed(2):'—'}</div><div class="l">Ritmo req./día equipo</div></div>`;
+ $('#elap').textContent=elapsed;$('#rem').textContent=rem;$('#mday').textContent=perTeamDay.toFixed(2);
+ $('#pace').textContent=rem>0?(falt/rem).toFixed(2):'—';
+ // cards por closer
+ const perCloserMonth=M/CL.length;const cds=$('#cards');cds.innerHTML='';
+ CL.forEach(c=>{const v=totC[c];const p=Math.min(100,100*v/perCloserMonth);const remreq=rem>0?Math.max(0,(perCloserMonth-v)/rem):0;
+  cds.innerHTML+=`<div class="cc"><div class="cn">${c}</div><div class="big">${v}<span style="font-size:14px;color:var(--mut)">/${perCloserMonth.toFixed(1)}</span></div>
+   <div class="bar"><i style="width:${p}%"></i></div>
+   <div class="row"><span>Cumplimiento</span><b>${(100*v/perCloserMonth).toFixed(0)}%</b></div>
+   <div class="row"><span>Falta</span><b>${Math.max(0,perCloserMonth-v).toFixed(1)}</b></div>
+   <div class="row"><span>Ritmo req./día</span><b>${remreq.toFixed(2)}</b></div></div>`;
+ });
+}
+// programa
+(function(){const pb=$('#progbody');const PC={'AI Sales':'ai','Sales Machine':'sm','LinkedIn':'li'};
+ CL.forEach(c=>{const p=D.progsep[c]||{};const t=(p['AI Sales']||0)+(p['Sales Machine']||0)+(p['LinkedIn']||0);
+  pb.innerHTML+=`<tr><td>${c}</td><td class="mono">${p['AI Sales']||0}</td><td class="mono">${p['Sales Machine']||0}</td><td class="mono">${p['LinkedIn']||0}</td><td class="mono"><b>${t}</b></td></tr>`});
+})();
+// embudo
+function rcls(v){return v>=60?'g':v>=35?'w':'b'}
+function renderFun(which){const rows=FUN[which];const fb=$('#funbody');fb.innerHTML='';
+ rows.forEach(r=>{const tot=r.name==='TOTAL';
+  fb.innerHTML+=`<tr class="${tot?'tot':''}"><td>${r.name}</td><td class="mono">${r.reg}</td><td class="mono">${r.cal}</td><td class="mono">${r.age}</td><td class="mono">${r.ate}</td><td class="mono"><b>${r.gan}</b></td>
+   <td class="rate ${rcls(r.r_cal)} mono">${r.r_cal.toFixed(0)}%</td><td class="rate ${rcls(r.r_age)} mono">${r.r_age.toFixed(0)}%</td><td class="rate ${rcls(r.r_ate)} mono">${r.r_ate.toFixed(0)}%</td><td class="rate ${rcls(r.r_gan)} mono">${r.r_gan.toFixed(0)}%</td><td class="rate mono">${r.r_glob.toFixed(1)}%</td></tr>`});
+}
+$('#funtabs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;[...e.currentTarget.children].forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');renderFun(b.dataset.f)});
+$('#dbody').addEventListener('input',e=>{const c=e.target.closest('input.cell');if(!c)return;const v=parseInt(c.value||'0',10)||0;EDIT[c.dataset.d+'|'+c.dataset.c]=v;localStorage.setItem(KEY,JSON.stringify(EDIT));render()});
+$('#dbody').addEventListener('focusout',e=>{if(e.target.classList.contains('cell'))render()});
+$('#meta').addEventListener('input',render);
+$('#reset').addEventListener('click',()=>{if(confirm('¿Borrar tus ediciones y volver a la data de HubSpot?')){EDIT={};localStorage.removeItem(KEY);render()}});
+render();renderFun('ago');
+</script></body></html>
